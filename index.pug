@@ -21,9 +21,9 @@ html(lang='en')
                     li: a(href="#about"): i(class="far fa-home")
                     li: a(href="#requirements"): i(class="fal fa-desktop")
                     li: a(href="#trailer"): i(class="far fa-gamepad")
-                    li: a(href="#buy"): i(class="far fa-trophy")
+                    li: a(href="#reviews"): i(class="far fa-trophy")
             .sidebar__bot
-                a(href="#"): i(class="fal fa-shopping-cart")
+                a(href="#buy"): i(class="fal fa-shopping-cart")
 
         .mainImg
             .mainImg__text
@@ -64,11 +64,11 @@ html(lang='en')
                     iframe(src="https://www.youtube.com/embed/2reK8k8nwBc" frameborder="0" width="100%" height="400" allowfullscreen)
 
 
-                +title("reviews")
+                +title("reviews", "reviews")
                 .container__reviews
                     .container__reviews-score
                         +score("88", "Metascore")
-                        +score("98", "Gamesbeat")
+                        +score("98", "Gamesbeats")
                         +score("90", "IGN")
                         +score("90", "Windows central")
                         +score("90", "Atomix")
