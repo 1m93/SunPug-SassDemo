@@ -365,6 +365,9 @@ ul {
   .sidebar ul li {
     padding: 0 10px;
   }
+  .sidebar i {
+    font-size: large;
+  }
 
   .mainImg {
     margin-left: 0;
