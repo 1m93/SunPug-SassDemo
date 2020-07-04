@@ -313,5 +313,9 @@ ul {
   transform: scale(1.2);
   transition: 0.5s;
 }
+.content .container__foot p {
+  text-align: center;
+  padding: 20px 0;
+}
 
 /*# sourceMappingURL=style.css.map */
