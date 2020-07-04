@@ -22,11 +22,19 @@
     ul
         display: flex
         justify-content: $justify
-        a:hover
-            border-bottom: 2px solid $PrimaryColor
         img
             width: #{$width}px
-            padding: 0 20px
+            margin: 0 20px
+            &:hover 
+                transform: scale(1.2)
+                transition: 0.5s
+
+=scoreBackground($image)
+    background: url(../images/slide/#{$image}.jpg)
+    background-repeat: no-repeat
+    background-size: cover
+    background-attachment: fixed
+    background-position: center
 
 $PrimaryColor: #bf4dc1
 $SecondaryColor: #1c1e1f
@@ -169,15 +177,23 @@ ul
 
         &__trailer
             +endContent
-                        
+
         &__reviews
             +endContent
             &-score
                 display: flex
                 margin-bottom: 50px
+                +scoreBackground(1)
+                animation: slide 20s infinite
+                @keyframes slide
+                    @for $var from 1 through 4
+                        #{$var*25}%
+                            +scoreBackground($var+1)
+
                 &>div
                     flex: 1
                     text-align: center
+                    padding: 50px 0
                     h2
                         transform: scale(1, 1.2)
             &-text

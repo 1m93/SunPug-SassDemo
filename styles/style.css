@@ -151,12 +151,13 @@ ul {
   display: flex;
   justify-content: center;
 }
-.mainImg__btn ul a:hover {
-  border-bottom: 2px solid #bf4dc1;
-}
 .mainImg__btn ul img {
   width: 25px;
-  padding: 0 20px;
+  margin: 0 20px;
+}
+.mainImg__btn ul img:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
 }
 
 .content {
@@ -212,10 +213,47 @@ ul {
 .content .container__reviews-score {
   display: flex;
   margin-bottom: 50px;
+  background: url(../images/slide/1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  animation: slide 20s infinite;
+}
+@keyframes slide {
+  25% {
+    background: url(../images/slide/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  50% {
+    background: url(../images/slide/3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  75% {
+    background: url(../images/slide/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  100% {
+    background: url(../images/slide/5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
 }
 .content .container__reviews-score > div {
   flex: 1;
   text-align: center;
+  padding: 50px 0;
 }
 .content .container__reviews-score > div h2 {
   transform: scale(1, 1.2);
@@ -267,12 +305,13 @@ ul {
   display: flex;
   justify-content: space-evenly;
 }
-.content .container__buy .stores__list ul a:hover {
-  border-bottom: 2px solid #bf4dc1;
-}
 .content .container__buy .stores__list ul img {
   width: 50px;
-  padding: 0 20px;
+  margin: 0 20px;
+}
+.content .container__buy .stores__list ul img:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
 }
 
 /*# sourceMappingURL=style.css.map */
