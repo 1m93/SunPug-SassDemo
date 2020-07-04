@@ -1,0 +1,50 @@
+@media only screen and (max-width: 1024px)
+    .sidebar
+        i
+            font-size: large
+    .content
+        .container
+            &__about
+                &-list
+                    display: block
+                    span
+                        display: none
+            &__requirements
+                display: block
+                &>div:first-child
+                    margin-bottom: 30px
+            &__buy
+                .deals
+                    display: block
+                    &__deal:first-child
+                        margin-bottom: 40px
+                    &__deal
+                        width: 80%
+                        margin: auto
+
+@media only screen and (max-width: 768px)
+    .sidebar
+        flex-direction: row
+        height: 5vh
+        width: 100vw
+        bottom: 0
+        z-index: 100
+        box-shadow: -1px -10px 24px 5px rgba(28,30,31,0.99)
+        a
+            width: 5vh
+            height: 5vh
+            line-height: 6vh
+        ul
+            display: flex
+            li
+                padding: 0 10px
+    .mainImg
+        margin-left: 0
+        width: 100vw
+        height: 95vh
+        position: relative
+    .content
+        margin-left: 0
+        .container
+            &__foot
+                margin-bottom: 5vh

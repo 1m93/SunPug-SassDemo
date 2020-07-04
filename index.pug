@@ -3,76 +3,17 @@ include mixins.pug
 doctype html
 html(lang='en')
     head
-        title Ori and the will of the wisps
-        meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        link(rel='stylesheet' href='styles/style.css')
-        link(rel="stylesheet"
-            href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-            crossorigin="anonymous"
-            )
+        include modules/head.pug
 
     body
-        .sidebar
-            .sidebar__top
-                +linkIcon("#", "fas fa-bars")
-            .sidebar__middle
-                ul 
-                    li: +linkIcon("#about", "far fa-home")
-                    li: +linkIcon("#requirements", "fal fa-desktop")
-                    li: +linkIcon("#trailer", "far fa-gamepad")
-                    li: +linkIcon("#reviews", "far fa-trophy")
-            .sidebar__bot
-                +linkIcon("#buy", "fal fa-shopping-cart")
-
-        .mainImg
-            .mainImg__text
-                h1 Ori and the will of the wisps
-                h3 Release on
-            .mainImg__btn
-                +storeButton
+        include modules/sidebar.pug
+        include modules/mainimg.pug
 
         .content
             .container
-
-                +title("about this game", "about")
-                .container__about
-                    .container__about-list
-                        p.highLight Developer: Moon Studios GmbH
-                        span /
-                        p.highLight Publisher: Xbox game studios 
-                        span /
-                        p.highLight Release date: 11 Mar, 2020
-                    .container__about-text
-                        p The little spirit Ori is no stranger to peril, but when a fateful flight puts the owlet Ku in harm’s way, it will take more than bravery to bring a family back together, heal a broken land, and discover Ori’s true destiny. From the creators of the acclaimed action-platformer Ori and the Blind Forest comes the highly anticipated sequel. Embark on an all-new adventure in a vast world filled with new friends and foes that come to life in stunning, hand-painted artwork. Set to a fully orchestrated original score, Ori and the Will of the Wisps continues the Moon Studios tradition of tightly crafted platforming action and deeply emotional storytelling.
-
-                +title("system requirements", "requirements")
-                .container__requirements
-                    +requirementsList("Minium", requirementsIcons, requirementsTypes, requirementsMinium)
-                    +requirementsList("Recommended", requirementsIcons, requirementsTypes,  requirementsRecommends)
-
-                +title("gameplay trailer", "trailer")
-                .container__trailer
-                    iframe(src="https://www.youtube.com/embed/2reK8k8nwBc" frameborder="0" width="100%" height="400" allowfullscreen)
-
-
-                +title("reviews", "reviews")
-                .container__reviews
-                    .container__reviews-score
-                        +scoreList(reviews)
-                    .container__reviews-text
-                        +reviewList(reviews)
-
-                +title("buy game", "buy")
-                .container__buy
-                    .deals
-                        +deal("pic2.jpg", "game", "10", "Play the critically acclaimed masterpiece. Embark on a new journey in a vast, exotic world where you’ll encounter towering enemies and challenging puzzles on your quest to unravel Ori’s destiny.")
-                        +deal("pic3.jpg", "soundtrack", "18", "Featuring 60 tracks composed by Gareth Coker, this soundtrack tells through music Ori's all-new adventure in a vast, exotic world where you’ll encounter towering enemies and challenging puzzles on your quest to unravel his destiny.")
-                    .stores
-                        h2 or buy on
-                        .stores__list
-                            +storeButton
-
-                .container__foot
-                    p.highLight 2020 | 1m93
+                include modules/about.pug
+                include modules/requirements.pug
+                include modules/trailer.pug
+                include modules/reviews.pug
+                include modules/buy.pug
+                include modules/foot.pug

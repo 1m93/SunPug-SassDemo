@@ -1,0 +1,25 @@
+.mainImg
+    margin-left: 4vw
+    background-image: url("../images/pic1.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    width: 37vw
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    position: fixed
+    &__text
+        color: white
+        text-align: center
+        h1
+            font-size: 2rem
+            text-shadow: 1px 1px 2px black
+            transform: scale(1, 1.1)
+        h3
+            color: $PrimaryColor
+            padding: 10px 0
+    &__btn
+        margin-bottom: 20px
+        +storeList(center, 25)

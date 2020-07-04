@@ -1,0 +1,26 @@
+&__reviews
+    +endContent
+    &-score
+        display: flex
+        margin-bottom: 50px
+        +scoreBackground(1)
+        animation: slide 20s infinite
+        @keyframes slide
+            @for $var from 1 through 4
+                #{$var*25}%
+                    +scoreBackground($var+1)
+        &>div
+            flex: 1
+            text-align: center
+            padding: 50px 0
+            h2
+                transform: scale(1, 1.2)
+    &-text
+        .text-review
+            display: flex
+            margin-top: 40px
+            &__logo
+                margin-right: 10px
+                img
+                    width: 40px
+                    border-radius: 50%
