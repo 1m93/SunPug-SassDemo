@@ -1,0 +1,61 @@
+mixin linkIcon (link, icon)
+    a(href=link): i(class=icon)
+
+mixin linkImage (link, image)
+    a(href=link): img(src="images/icons/"+image)
+
+mixin storeButton
+    ul
+        li: +linkImage("#", "steam.png")
+        li: +linkImage("#", "gog.png")
+        li: +linkImage("#", "epic.png")
+        li: +linkImage("#", "xbox.png")
+
+mixin title (title, name)
+    h1(id=name).container__title=title
+
+mixin requirementsListItem (icon, type, text)
+    div
+        .listIcon 
+            i(class=icon)
+        .listText
+            p.scnLight=type
+            p=text
+
+mixin requirementsList (name, icons, types, texts)
+    .container__requirements-list
+        h3=name
+        - for (var x = 0; x < icons.length; x++)
+            +requirementsListItem (icons[x], types[x], texts[x])
+
+mixin score (number, text)
+    div 
+        h2.highLight=number
+        p.scnLight=text
+
+mixin scoreList (data)
+    - for (var x = 0; x < data.length; x++)
+        +score (data[x].score, data[x].name)
+
+mixin review (image, score, name, comment)
+    .text-review
+        .text-review__logo
+            img(src="images/icons/"+image) 
+        .text-review__content
+            h4.highLight=score+"/100"
+            p.scnLight=name
+            p=comment
+
+mixin reviewList (data)
+    - for (var x = 0; x < data.length; x++)
+        +review (data[x].image, data[x].score, data[x].name, data[x].comment)
+
+mixin deal (iamge, name, price, describe)
+    .deals__deal
+        div
+            img(src="images/"+iamge)
+            h2=name
+            h1.highLight=price+"$"
+            p=describe
+        div
+            a(href="#" ): button.btn BUY

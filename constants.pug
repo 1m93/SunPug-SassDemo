@@ -1,40 +1,12 @@
-mixin title (title, name)
-    h1(id=name).container__title=title
-
-mixin requirementsListItem (icon, type, text)
-    div
-        .listIcon 
-            i(class=icon)
-        .listText
-            p.scnLight=type
-            p=text
-
-mixin requirementsList (name, icons, types, texts)
-    .container__requirements-list
-        h3=name
-        - for (var x = 0; x < icons.length; x++)
-            +requirementsListItem (icons[x], types[x], texts[x])
-
-mixin score (number, text)
-    div 
-        h2.highLight=number
-        p.scnLight=text
-
-mixin review (image, score, name, comment)
-    .text-review
-        .text-review__logo
-            img(src="images/icons/"+image) 
-        .text-review__content
-            h4.highLight=score+"/100"
-            p.scnLight=name
-            p=comment
-
-mixin deal (iamge, name, price, describe)
-    .deals__deal
-        div
-            img(src="images/"+iamge)
-            h2=name
-            h1.highLight=price+"$"
-            p=describe
-        div
-            a(href="#" ): button.btn BUY
+- requirementsIcons = ["fab fa-windows", "far fa-microchip", "far fa-memory", "far fa-cube", "fal fa-hdd"]
+- requirementsTypes = ["Os", "Processor", "Memory", "Graphics", "Storage"]
+- requirementsMinium = ["Windows 10 Version 18362.0 or higher", "AMD Athlon X4 | Intel Core i5 4460", "8 GB RAM", "Nvidia GTX 950 | AMD R7 370", "20 GB available space"]
+- requirementsRecommends = ["Windows 10 Version 18362.0 or higher", "AMD Ryzen 3 | Intel i5 Skylake", "8 GB RAM", "Nvidia GTX 970 | AMD RX 570", "20 GB available space"]
+- 
+    reviews = [
+        {"image": "metacritic.png", "score": "88", "name": "Metacritic", "comment": "It’s a shining example of how to do a sequel. They kept the core of what made the original enjoyable while switching up just about everything they could. There are some elements I feel it did better, some where I feel the original did better with, but on the whole they feel like they’re on equal footing. If you want a game that’s more of an experience than simply something to kill time, if you want something that showcases how artistic games can be, if you want an action platformer with plenty of approaches to combat, I can’t recommend enough that you pick up Ori and the Will of the Wisps. Also Ori and the Blind Forest if you haven’t played it already."},
+        {"image": "gamebeats.jpg", "score": "98", "name": "Gamebeats", "comment": "As a huge fan of Ori and the Blind Forest, Will of the Wisps is everything that I could have wanted from a sequel. It’s a longer adventure with fantastic additions, especially the incredible boss fights. The ending sequence will go down as one of the best in gaming history. The occasional technical problems can be annoying, but I’d put up with five times as many bugs to play through this masterpiece."},
+        {"image": "ign.png", "score": "90", "name": "Ign", "comment": "In Ori and the Will of the Wisps, Moon Studios has taken an excellent foundation and made even more out of it. Its many new elements expand on and add to the first game’s fun without bogging it down or becoming overcomplicated. And that’s really the best praise you can give a sequel - it stays true to the spirit of the original, doubles down on what made it great, and gives you more stake in the world and options to navigate it. Ori and the Will of the Wisps is an excellent heartfelt follow-up that pushes the series to new heights."},
+        {"image": "windowscentral.png", "score": "90", "name": "Windows central", "comment": "It's quite honestly almost absurd that this game costs just $30. Simply put, Ori and the Will of the Wisps has more of a soul than many $60 AAA titles I've played in recent years, and is a cherishable experience I'm sure I will return to repeatedly for many years to come. There wasn't a single moment throughout Will of the Wisp's powerful campaign that I felt bored, or fatigued, and the ending left me with an immediate sense of longing for more of Ori's enchanted world."},
+        {"image": "atomix.jpeg", "score": "90", "name": "Atomix", "comment": "My time with Ori and the Will of the Wisps has been just fabulous. Since I had the opportunity to play and review Ori and the Blind Forest at the time, I knew that the people of Microsoft had not been wrong to support a company like Moon Studios, because they have a vision and way of doing things very different from everything out there. With this new work, the Austrians confirm their enormous talent and, of course, leave the door open to enter projects that are probably more complex in every way. Xbox Games Studios has an authentic diamond in its ranks that we hope will continue to be exploited as well as it has been so far."},
+    ]

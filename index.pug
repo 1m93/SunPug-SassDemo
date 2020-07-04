@@ -1,4 +1,5 @@
 include constants.pug
+include mixins.pug
 doctype html
 html(lang='en')
     head
@@ -15,26 +16,22 @@ html(lang='en')
     body
         .sidebar
             .sidebar__top
-                a(href="#"): i(class="fas fa-bars")
+                +linkIcon("#", "fas fa-bars")
             .sidebar__middle
                 ul 
-                    li: a(href="#about"): i(class="far fa-home")
-                    li: a(href="#requirements"): i(class="fal fa-desktop")
-                    li: a(href="#trailer"): i(class="far fa-gamepad")
-                    li: a(href="#reviews"): i(class="far fa-trophy")
+                    li: +linkIcon("#about", "far fa-home")
+                    li: +linkIcon("#requirements", "fal fa-desktop")
+                    li: +linkIcon("#trailer", "far fa-gamepad")
+                    li: +linkIcon("#reviews", "far fa-trophy")
             .sidebar__bot
-                a(href="#buy"): i(class="fal fa-shopping-cart")
+                +linkIcon("#buy", "fal fa-shopping-cart")
 
         .mainImg
             .mainImg__text
                 h1 Ori and the will of the wisps
                 h3 Release on
             .mainImg__btn
-                ul
-                    li: a(href="#"): img(src="images/icons/steam.png")
-                    li: a(href="#"): img(src="images/icons/gog.png")
-                    li: a(href="#"): img(src="images/icons/epic.png")
-                    li: a(href="#"): img(src="images/icons/xbox.png")
+                +storeButton
 
         .content
             .container
@@ -43,21 +40,17 @@ html(lang='en')
                 .container__about
                     .container__about-list
                         p.highLight Developer: Moon Studios GmbH
-                        p(style="padding: 0 10px") /
+                        span /
                         p.highLight Publisher: Xbox game studios 
-                        p(style="padding: 0 10px") /
+                        span /
                         p.highLight Release date: 11 Mar, 2020
                     .container__about-text
                         p The little spirit Ori is no stranger to peril, but when a fateful flight puts the owlet Ku in harm’s way, it will take more than bravery to bring a family back together, heal a broken land, and discover Ori’s true destiny. From the creators of the acclaimed action-platformer Ori and the Blind Forest comes the highly anticipated sequel. Embark on an all-new adventure in a vast world filled with new friends and foes that come to life in stunning, hand-painted artwork. Set to a fully orchestrated original score, Ori and the Will of the Wisps continues the Moon Studios tradition of tightly crafted platforming action and deeply emotional storytelling.
 
                 +title("system requirements", "requirements")
                 .container__requirements
-                    - icons = ["fab fa-windows", "far fa-microchip", "far fa-memory", "far fa-cube", "fal fa-hdd"]
-                    - types = ["Os", "Processor", "Memory", "Graphics", "Storage"]
-                    - minium = ["Windows 10 Version 18362.0 or higher", "AMD Athlon X4 | Intel Core i5 4460", "8 GB RAM", "Nvidia GTX 950 | AMD R7 370", "20 GB available space"]
-                    - recommends = ["Windows 10 Version 18362.0 or higher", "AMD Ryzen 3 | Intel i5 Skylake", "8 GB RAM", "Nvidia GTX 970 | AMD RX 570", "20 GB available space"]
-                    +requirementsList("Minium", icons, types, minium)
-                    +requirementsList("Recommended", icons, types,  recommends)
+                    +requirementsList("Minium", requirementsIcons, requirementsTypes, requirementsMinium)
+                    +requirementsList("Recommended", requirementsIcons, requirementsTypes,  requirementsRecommends)
 
                 +title("gameplay trailer", "trailer")
                 .container__trailer
@@ -67,17 +60,9 @@ html(lang='en')
                 +title("reviews", "reviews")
                 .container__reviews
                     .container__reviews-score
-                        +score("88", "Metascore")
-                        +score("98", "Gamesbeats")
-                        +score("90", "IGN")
-                        +score("90", "Windows central")
-                        +score("90", "Atomix")
+                        +scoreList(reviews)
                     .container__reviews-text
-                        +review("metacritic.png", "88", "Metacritic", "It’s a shining example of how to do a sequel. They kept the core of what made the original enjoyable while switching up just about everything they could. There are some elements I feel it did better, some where I feel the original did better with, but on the whole they feel like they’re on equal footing. If you want a game that’s more of an experience than simply something to kill time, if you want something that showcases how artistic games can be, if you want an action platformer with plenty of approaches to combat, I can’t recommend enough that you pick up Ori and the Will of the Wisps. Also Ori and the Blind Forest if you haven’t played it already.")
-                        +review("gamebeats.jpg", "98", "Gamebeats", "As a huge fan of Ori and the Blind Forest, Will of the Wisps is everything that I could have wanted from a sequel. It’s a longer adventure with fantastic additions, especially the incredible boss fights. The ending sequence will go down as one of the best in gaming history. The occasional technical problems can be annoying, but I’d put up with five times as many bugs to play through this masterpiece.")
-                        +review("ign.png", "90", "Ign", "In Ori and the Will of the Wisps, Moon Studios has taken an excellent foundation and made even more out of it. Its many new elements expand on and add to the first game’s fun without bogging it down or becoming overcomplicated. And that’s really the best praise you can give a sequel - it stays true to the spirit of the original, doubles down on what made it great, and gives you more stake in the world and options to navigate it. Ori and the Will of the Wisps is an excellent heartfelt follow-up that pushes the series to new heights.")
-                        +review("windowscentral.png", "90", "Windows central", "It's quite honestly almost absurd that this game costs just $30. Simply put, Ori and the Will of the Wisps has more of a soul than many $60 AAA titles I've played in recent years, and is a cherishable experience I'm sure I will return to repeatedly for many years to come. There wasn't a single moment throughout Will of the Wisp's powerful campaign that I felt bored, or fatigued, and the ending left me with an immediate sense of longing for more of Ori's enchanted world.")
-                        +review("atomix.jpeg", "90", "Atomix", "My time with Ori and the Will of the Wisps has been just fabulous. Since I had the opportunity to play and review Ori and the Blind Forest at the time, I knew that the people of Microsoft had not been wrong to support a company like Moon Studios, because they have a vision and way of doing things very different from everything out there. With this new work, the Austrians confirm their enormous talent and, of course, leave the door open to enter projects that are probably more complex in every way. Xbox Games Studios has an authentic diamond in its ranks that we hope will continue to be exploited as well as it has been so far.")
+                        +reviewList(reviews)
 
                 +title("buy game", "buy")
                 .container__buy
@@ -87,11 +72,7 @@ html(lang='en')
                     .stores
                         h2 or buy on
                         .stores__list
-                            ul
-                                li: a(href="#"): img(src="images/icons/steam.png")
-                                li: a(href="#"): img(src="images/icons/gog.png")
-                                li: a(href="#"): img(src="images/icons/epic.png")
-                                li: a(href="#"): img(src="images/icons/xbox.png")
+                            +storeButton
 
                 .container__foot
                     p.highLight 2020 | 1m93
