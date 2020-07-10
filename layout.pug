@@ -1,0 +1,27 @@
+include constants.pug
+include mixins.pug
+doctype html
+html(lang='en')
+    head
+        include modules/head.pug
+    
+    body 
+        block sidebar 
+            include modules/sidebar.pug
+        block mainimg
+            include modules/mainimg.pug
+        block content 
+            .content
+                .container 
+                    block about 
+                        include modules/about.pug
+                    block requirements 
+                        include modules/requirements.pug
+                    block trailer 
+                        include modules/trailer.pug
+                    block reviews 
+                        include modules/reviews.pug
+                    block buy 
+                        include modules/buy.pug
+                    block foot 
+                        include modules/foot.pug
