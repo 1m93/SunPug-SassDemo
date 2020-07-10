@@ -39,7 +39,7 @@ ul {
   color: #00acee;
 }
 
-.scnLight {
+.scnLight, .btn {
   color: white;
 }
 
@@ -47,7 +47,6 @@ ul {
   outline: none;
   background-color: transparent;
   border: 1px solid #00acee;
-  color: #00acee;
   font-weight: 600;
   padding: 10px 30px;
   font-size: 1.1rem;
@@ -58,6 +57,17 @@ ul {
   color: #1c1e1f;
   background-color: #00acee;
   transition: 0.5s;
+}
+
+.endcontent {
+  padding-top: 50px;
+  border-bottom: 2px solid rgba(136, 136, 136, 0.09);
+}
+
+.background, .content .container__reviews-score, .mainImg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .sidebar {
@@ -125,11 +135,8 @@ ul {
 }
 
 .mainImg {
-  margin-left: 4vw;
   background-image: url("../images/pic1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  margin-left: 4vw;
   width: 37vw;
   height: 100vh;
   display: flex;
@@ -179,10 +186,6 @@ ul {
   padding: 30px 0;
   text-transform: capitalize;
 }
-.content .container__about {
-  padding-bottom: 50px;
-  border-bottom: 2px solid rgba(136, 136, 136, 0.09);
-}
 .content .container__about-list {
   font-weight: bold;
   font-style: italic;
@@ -194,8 +197,6 @@ ul {
 }
 .content .container__requirements {
   display: flex;
-  padding-bottom: 50px;
-  border-bottom: 2px solid rgba(136, 136, 136, 0.09);
 }
 .content .container__requirements-list {
   flex: 1;
@@ -212,52 +213,24 @@ ul {
   color: #00acee;
   font-size: 2rem;
 }
-.content .container__trailer {
-  padding-bottom: 50px;
-  border-bottom: 2px solid rgba(136, 136, 136, 0.09);
-}
-.content .container__reviews {
-  padding-bottom: 50px;
-  border-bottom: 2px solid rgba(136, 136, 136, 0.09);
-}
 .content .container__reviews-score {
   display: flex;
   margin-bottom: 50px;
   background: url(../images/slide/1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
   animation: slide 20s infinite;
 }
 @keyframes slide {
   25% {
     background: url(../images/slide/2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
   }
   50% {
     background: url(../images/slide/3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
   }
   75% {
     background: url(../images/slide/4.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
   }
   100% {
     background: url(../images/slide/5.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
   }
 }
 .content .container__reviews-score > div {
@@ -278,10 +251,6 @@ ul {
 .content .container__reviews-text .text-review__logo img {
   width: 40px;
   border-radius: 50%;
-}
-.content .container__buy {
-  padding-bottom: 50px;
-  border-bottom: 2px solid rgba(136, 136, 136, 0.09);
 }
 .content .container__buy .deals {
   display: flex;
